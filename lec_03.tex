@@ -1,0 +1,130 @@
+\lecture{3}{28/01/2025}{Discrete Symmetries}
+
+Recall the Yang-Mills gauge field $A_{\mu}$ is an $N \times  N$ matrix given by
+\begin{align}
+    A_{\mu} = A_{\mu}^{A} T^{A}
+,\end{align}
+for $A = 1, \cdots, \dim G$. The gauge transformation is $A_\mu \to \Omega A_\mu \Omega^{-1} + \frac{i}{g} \Omega \partial_\mu \Omega^{-1}$ where it is parameterized by $\Omega \left( x \right) \in G$ and $g$ is the coupling constant.
+
+The field strength tensor is given by
+\begin{align}
+    F_{\mu \nu} = \partial_\mu A_\nu - \partial_\nu A_\mu - ig \left[ A_\mu, A_\nu \right] 
+.\end{align}
+
+One can check that this transforms as $F_{\mu \nu} \to \Omega F_{\mu \nu} \Omega^{-1}$.
+\begin{proof}
+    
+\end{proof}
+
+The Yang-Mills action
+\begin{align}
+    S = -\frac{1}{2} \int \dd{^{4}x} \Tr \left( F_{\mu \nu} F^{\mu \nu} \right) 
+,\end{align}
+where $F^{\mu \nu} = \left( F^{A} \right)^{\mu \nu} T^{A}$ and $\Tr \left( T^{A} T^{B} \right) = \frac{1}{2} \delta^{AB}$.
+
+The equation of motion is
+\begin{align}
+    \mathcal{D}_\mu F^{\mu \nu} = \partial_\mu F^{\mu \nu} - ig \left[ A_\mu, F^{\mu \nu} \right] = 0
+.\end{align}
+
+\begin{proof}
+    
+\end{proof}
+
+We also have the Bianchi identity $\mathcal{D}_\mu \star F^{\mu \nu} = 0$. These are non-linear equations.
+
+Matter transforms in some representation of $G$. We write the generators as $\tensor{T^{A} \left( R \right)}{^{a}_b}$ for $A = 1, \cdots, \dim G$ and $a,b = 1, \cdots, \dim R$. Then under a gauge transformation,
+\begin{align}
+    \phi^{a} \to \tensor{\Omega \left( R \right)}{^{a}_b} \phi^{b}
+,\end{align}
+with $\Omega \left( R \right) = e^{i g \alpha^{A} T^{A}\left( R \right) }$.
+
+We introduce the covariant derivative
+\begin{align}
+    \mathcal{D}_\mu \phi^{a} = \partial_\mu \phi^{a} - ig A_\mu^{A} \tensor{T^{A}\left( R \right)}{^{a}_b} \phi^{b}
+,\end{align}
+which transforms as
+\begin{align}
+    \mathcal{D}_\mu \phi^{a} \to \tensor{\Omega \left( R \right)}{^{a}_b} \mathcal{D}_\mu \phi^{b}
+.\end{align}
+
+In the Standard Model, all matter fields live in the fundamental representation.
+
+
+\subsection{Discrete Symmetries}
+
+We want to know how parity, charge conjugation and time reversal act.
+
+\emph{Parity} is an inversion of space, $P : \left( t, \vec{x} \right) \mapsto \left( t, -\vec{x} \right)$. Naturally, one asks how do fields transform under a parity transformation? 
+
+The gauge field sits in $\mathcal{D}_\mu = \partial_\mu - i A_\mu$ and we have $\partial_0 \to \partial_0$ and $\partial_i \to - \partial_i$, so we must have
+\begin{align}
+    P: A_0 \left( \vec{x},t \right) \to A_0 \left( t,-\vec{x} \right)  &&
+    P : A_i \left( \vec{x},t \right) \to - A_i \left( t,-\vec{x} \right) 
+.\end{align}
+
+Then $E_i = F_{0i}$ and $B_i = \frac{1}{2} \epsilon_{ijk} F^{jk}$ transform as
+\begin{align}
+    P : \vec{E} \left( t,\vec{x} \right) \to - \vec{E}\left( t,-\vec{x} \right) \text{~which is a vector,} &&
+    P : \vec{B} \left( t,\vec{x} \right) \to \vec{B}\left( t,-\vec{x} \right) \text{~which is a pseudovector}
+.\end{align}
+
+Spinors are more subtle. Massless Weyl spinors obey
+\begin{align}
+    \overline{\sigma}^{\mu}\partial_\mu \psi_L = 0 && \sigma^{\mu} \partial_\mu \psi_R
+.\end{align}
+
+These equations turn into each other under parity and thus a single Weyl fermion is not parity invariant. We need a pair such that
+\begin{align}
+    P : \psi_L \left( t,\vec{x} \right) \mapsto \psi_R \left( t, -\vec{x} \right)  \\
+    P : \psi_R \left( t,\vec{x} \right) \mapsto \psi_L \left( t, -\vec{x} \right) 
+.\end{align}
+
+One could have $\pm$ signs here or generically a phase. In terms of a Dirac fermion, $\psi = \mqty( \psi_L \\ \psi_R )$ we have
+\begin{align}
+    P \psi \left( t,\vec{x} \right) \mapsto \gamma^{0} \psi \left( t, -\vec{x} \right) 
+,\end{align}
+for $\gamma^{0} = \mqty( 0 & 1 \\ 1 & 0 )$.
+
+\emph{Charge conjugation} exchanges particles and anti-particles. On scalars it acts as
+\begin{align}
+    C : \phi \mapsto \pm \phi^{\dag}
+.\end{align}
+
+As we have $\mathcal{D}_\mu \phi = \partial_\mu \phi - i e A_\mu \phi$,
+\begin{align}
+    \mathcal{D}_\mu \phi^{\dag} = \partial_\mu \phi^{\dag} + i e A_\mu \phi^{\dag}
+,\end{align}
+tells us that we must have $C : A_\mu \mapsto -A_\mu$ (or for Yang-Mills, $C : A_\mu \mapsto - A_\mu^{\dag}$).
+
+Therefore $C : \vec{E} \mapsto - \vec{E}$ and identically for $B$.
+
+For spinors, the Dirac equation is
+\begin{align}
+    i \gamma^{\mu}\left( \partial_\mu - i e A_\mu \right) - M \psi = 0
+.\end{align}
+
+Where taking the complex conjugate gives
+\begin{align}
+    -i \left( \gamma^{\mu} \right)^{*} \left( \partial_\mu + i e A_\mu \right) \psi^{*} - M \psi^{*}
+.\end{align}
+
+Suppose that $C : \psi \mapsto C \psi^{*}$, for some $4 \times 4$ matrix $C$.
+
+Under charge conjugation, the Dirac equation becomes
+\begin{align}
+    i \gamma^{\mu}\left( \partial_\mu + i e A_\mu  \right) C\psi^{*} - M C \psi^{*} = 0 \\
+    \implies i C^{-1} \gamma^{\mu} C \left( \partial_\mu + i e A_\mu \right) \psi^{*} - M \psi^{*} = 0
+.\end{align}
+
+Then comparing to the conjugated Dirac equation, we see that we need $C^{-1} \gamma^{\mu} C = - \left( \gamma^{\mu} \right)^{*}$. In the chiral representation, we have $C = \pm i \gamma^2$ achieves this. In terms of Weyl spinors, then we see
+\begin{align}
+    C : \psi_L \mapsto \pm i \sigma^2 \psi_R^{*} \\
+    C : \psi_R \mapsto \mp i \sigma^2 \psi_L^{*}
+.\end{align}
+
+Therefore a theory of a single Weyl fermion is not invariant under $C$ either. But it can be invariant under $CP$ acting as
+\begin{align}
+    CP : \psi_L \left( t, \vec{x} \right) \mapsto \mp i \sigma^2 \psi_L^{*}\left( t, -\vec{x} \right) 
+.\end{align}
+

@@ -1,0 +1,163 @@
+\lecture{2}{25/01/2025}{Spinors}
+
+Recall that 
+\begin{align}
+    S^{\mu \nu} = \frac{i}{4} \left[ \gamma^{\mu}, \gamma^{\nu} \right] = \mqty( \sigma^{\mu \nu} & 0 \\ 0 & \overline{\sigma}^{\mu \nu} )
+,\end{align}
+where the matrix on the right holds in the chiral representation. As this is block diagonal, both of the $2 \times 2$ block matrices also form representations of the Lorentz group.
+
+\begin{note}
+    These two representations are inequivalent. However, if one complex conjugates a spinor, its handedness flips. This follows as
+    \begin{align}
+        \epsilon^{-1} \left( \sigma^{\mu \nu} \right)^{*} \epsilon = \overline{\sigma}^{\mu \nu}
+    ,\end{align}
+    for a similarity matrix
+    \begin{align}
+        \epsilon = \mqty( 0 & 1 \\ -1 & 0 )
+    .\end{align}
+\end{note}
+
+We notice that we can form a scalar from two left handed spinors (or two right handed
+\begin{align}
+    \psi_L \chi_L &\equiv \epsilon^{\alpha \beta} \left( \psi_L \right)_\beta \left( \chi_L \right)_\alpha \\
+    &= \psi_{L2} \chi_{L 1} - \psi_{L 1} \chi_{L 2}
+.\end{align}
+
+This is a scalar as
+\begin{align}
+    \psi_L \chi_L &\to \epsilon^{\alpha \beta} \tensor{S}{_{\alpha}^{\gamma}} \tensor{S}{_{\beta}^{\delta}} \left( \psi_L \right)_{\delta} \left( \chi_L \right)_{\gamma} \\
+    &= \det S \epsilon^{\gamma \delta} \left( \psi_L \right)_\delta \left( \chi_L \right)_{\gamma}  \\
+    &= \det S \psi_L \chi_L 
+,\end{align}
+where $\det S = 1$ implies this is a scalar.
+
+
+You can then check that
+\begin{align}
+    \epsilon^{T} \left( \sigma^{\mu \nu} \right)^{*} \epsilon = \overline{\sigma}^{\mu \nu}
+.\end{align}
+
+\begin{note}
+    In QFT, spinors are anti-commuting so
+    \begin{align}
+        \psi_L \chi_L &= \psi_{L 2} \chi_{L 1} - \psi_{L 1} \chi_{L 2} \\
+        &= - \chi_{L 1} \phi_{L 2} + \chi_{ L 2} \psi_{L 1}  \\
+        &= \chi_{L 1} \phi_{L} 
+    ,\end{align}
+    In particular, $\psi_{L} \psi_{L} = 2 \psi_{L 2} \psi_{L 1} \neq 0 $.
+\end{note}
+
+
+\subsection{Actions}
+
+A Dirac spinor has the action
+\begin{align}
+    S_\text{Dirac} &= - \int \dd{^{4}x} \left( i \overline{\psi} \gamma^{\mu} \partial_\mu \psi - M \overline{\psi} \psi \right)  \\
+    &= - \int \dd{^{4}x} \left( i \overline{\psi}_L \overline{\sigma}^{\mu} \partial_\mu \psi_L + i \overline{\psi}_R \sigma^{\mu} \partial_\mu \psi_R - M \left( \overline{\psi}_R \psi_L + \overline{\psi}_L \psi_R \right)  \right) 
+,\end{align}
+where $\overline{\psi} = \psi^{\dag} \gamma^{0}$ and $M \in \R$. Note that $\overline{\psi}_L = \psi^{\dag}_L$ and thus the mass term has two left-handed and two right handed Weyl spinors as the handedness is changed by conjugation.
+
+\begin{note}
+    $M$ is called a \textbf{Dirac mass}. When $M = 0$, the action has $U \left( 1 \right)^2$ global symmetry. When $M \neq 0$, this is just a $U\left( 1 \right)$.
+\end{note}
+
+We can also write down an action for a single Weyl fermion
+\begin{align}
+    S_\text{Weyl} = - \int \dd{^{4}x} \left( i \overline{\psi}_L \overline{\sigma}^{\mu} \partial_\mu \psi_L + \frac{1}{2} m \psi_L \psi_L + \frac{1}{2} m^{*} \overline{\psi}_L \overline{\psi}_L \right) 
+,\end{align}
+for $m \in \C$. This is called a \textit{Majorana mass}. It breaks the $U \left( 1 \right) $ symmetry and so is forbidden if the $U\left( 1 \right) $ is gauged.
+
+\subsection{Gauge Invariance}
+
+In Maxwell, we have gauge transformations $A_\mu + \partial_\mu \alpha$, with field strength
+\begin{align}
+    F_{\mu \nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+,\end{align}
+which is gauge invariant. The action is
+\begin{align}
+    S = -\frac{1}{4} \int \dd{^{4}x} F_{\mu \nu} F^{\mu \nu}
+.\end{align}
+
+This has equation of motion $\partial_\mu F^{\mu \nu} = 0$ and the Bianchi identity
+\begin{align}
+    \partial_\mu \ast F^{\mu \nu} = 0
+,\end{align}
+where $\ast F^{\mu \nu} = \frac{1}{2} \epsilon^{\mu \nu \rho \tau} F_{\rho \sigma}$.
+
+Complex scalar fields of charge $e$ transform as
+\begin{align}
+    \phi \left( x \right) \to e^{i e \alpha \left( x \right) } \phi \left( x \right) 
+.\end{align}
+
+We define the covariant derivative to be
+\begin{align}
+    \mathcal{D}_\mu \phi = \partial_\mu \phi - i e A_\mu \phi
+,\end{align}
+and observe that under gauge transformation it picks up only a phase
+\begin{align}
+    \mathcal{D}_\mu \phi \to e^{ie \alpha} \mathcal{D}_\mu \phi
+.\end{align}
+
+\begin{proof}
+    Observe that with $A_\mu \to A_\mu + \partial_\mu \alpha \left( x \right) $, we see
+    \begin{align}
+        \mathcal{D}_\mu \phi &\to \left( \partial_\mu -ie A_\mu - ie \partial_\mu \alpha \left( x \right)  \right) \left( e^{ie \alpha \left( x \right) } \phi \right)  \\
+        &= e^{ie \alpha \left( x \right) } \left( \partial_\mu + i e \partial_\mu \alpha \left( x \right) - i e A_\mu - ie \partial_\mu \alpha \left( x \right)  \right) \phi   \\
+        &= e^{ie \alpha \left( x \right) } \left( \partial_\mu - i e A_\mu  \right) \phi   \\
+        &= e^{i e \alpha \left( x \right) } \mathcal{D}_\mu \phi
+    ,\end{align}
+    which is transformation \emph{covariantly} as desired.
+\end{proof}
+
+Then we have the action
+\begin{align}
+    S = \int \dd{^{4}x} \mathcal{D}_\mu \phi^{\dag} \mathcal{D}^{\mu} \phi - V \left( \left| \phi \right|  \right)
+,\end{align}
+is \emph{gauge invariant}.
+
+\subsection{Yang-Mills Theory}
+
+Yang Mills is the extension of Maxwell theory from $G = U\left( 1 \right) $ to an arbitrary simple, compact Lie group $G$ whose algebra has Hermitian generators $T^{A} = \left( T^{A} \right)^{\dag}$ obeying
+\begin{align}
+    \left[ T^{A}, T^{B} \right] = i f^{ABC} T^{C}
+,\end{align}
+with structure constants $f^{ABC}$.
+
+We will need only $G = SU\left( N \right) $ here. The generators in the fundamental representation are $N \times N$ matrices $T^{A}$ such that $\tr \left( T^{A} \right) = 0$ and 
+\begin{align}
+    \Tr \left( T^{A} T^{B} \right) = \frac{1}{2} \delta^{AB}
+.\end{align}
+
+\begin{example}
+    For $G = SU \left( 2 \right) $, we have the Pauli matrices $T^{A} = \frac{1}{2} \sigma^{A}$ for $A \in \{1,2,3\} $.
+\end{example}
+
+
+We have a gauge field $A_\mu^{A}$ for each generator of $G$. We write
+\begin{align}
+    A_\mu = A_\mu^{A} T^{A}
+.\end{align}
+
+This is a Lie-algebra valued field (namely, an $N\times N$ matrix).
+
+The gauge symmetry is associated to $\Omega \left( x \right) \in G$ under which
+\begin{align}
+    A_\mu \mapsto \Omega A_\mu \Omega^{-1} + \frac{i}{g} \Omega \partial_\mu \Omega^{-1}
+,\end{align}
+where $g$ is the coupling constant like $e$ in Maxwell theory.
+
+To compare to Maxwell, we write $\Omega \left( x \right) = e^{i g \alpha \left( x \right) }$ to find
+\begin{align}
+    \Omega \ A_\mu \Omega^{-1} + \frac{i}{g} \Omega \partial_\mu \Omega^{-1} = A_\mu + \partial_\mu \alpha \left( x \right) 
+,\end{align}
+as before, just now with spatial dependence $\alpha \left( x \right) $.
+
+
+
+
+
+
+
+
+
+
