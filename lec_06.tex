@@ -1,0 +1,130 @@
+\lecture{6}{04/02/2025}{Continuous Symmetries}
+
+We saw that breaking a discrete symmetry gives a finite number of ground states. Breaking a continuous symmetry gives an infinite number of ground states.
+
+In $D = 3 + 1$, consider the complex scalar field $\phi$ with action
+\begin{align}
+    S = \int \dd{^{4}x} \left( \partial_\mu \phi^{\dag} \partial^{\mu} \phi - V \left( \phi, \phi^{\dag} \right)  \right) 
+,\end{align}
+with $V = m^2 \left| \phi \right| + \frac{1}{2}\lambda \left| \phi \right|^{4}$.
+
+This theory has a $U\left( 1 \right) $ symmetry given by $\phi \mapsto e^{i\alpha }\phi$.
+
+When $m^2 > 0$, then we get a parabolic cone potential. This has minimum at $\phi = 0$ as expected and the symmetry is unbroken.
+
+% fig
+
+If $m^2 < 0$, then we get a Mexican hat potential with minima at $\left| \phi \right|^2 = v^2 = -\frac{m^2}{\lambda}$. Thus the symmetry is broken in this theory.
+
+% fig
+
+\begin{definition}
+    The \emph{vacuum manifold} $\mathcal{M}_0$ is the space of constant field configurations such that $V \left( \phi \right) = V_\text{min}$. 
+
+\end{definition}
+
+Here $\mathcal{M}_0 = S^{1}$. 
+
+
+Here we decompose $\phi \left( x \right) = r\left( x \right) e^{i \Theta \left( x \right) }$ and see that
+\begin{align}
+    S = \int \dd{^{4}x} \left( \partial_\mu r \partial^{\mu} r + r^2 \partial_\mu \theta \partial^{\mu} \theta - \lambda \left( r^2 - v^2 \right)^2\right) 
+.\end{align}
+
+The different vacua are labelled by constant $\theta$. Fluctuations of $\Theta \left( x \right) $ are massless. This is the \textbf{Goldstone boson}.
+
+We write $r = v + \sigma \left( x \right)$ and read off the mass of the $\sigma$ field to be $M_\sigma^2 = 2 \lambda v^2$. For energy $E \ll M_\sigma$, we can focus on the $\Theta \left( x \right) $ field with $\mathcal{L} = r^2 \partial_\mu \Theta \partial^{\mu} \phi$.
+
+\subsection{The $O\left( N \right) $ model}
+
+Consider $N$ real scalar fields $\phi^{a}\left( x \right) $ for $a=1,\cdots, N$ with
+\begin{align}
+    S= \int \dd{^{4}x} \left( \frac{1}{2} \partial_\mu \phi^{a} \partial^{\mu} \phi^{a} - V \left( \phi \right) \right)
+,\end{align}
+with $V \left( \phi \right) = \frac{1}{2} m^2 \phi^{a} \phi^{a} + \frac{\lambda}{4} \left( \phi^{a} \phi^{a} \right)^2$.
+
+When $m^2 < 0$, $V_\text{min}$ sits at $\phi^{a} \phi^{a} = v^2 = - \frac{m^2}{\lambda}$. We see this is $\mathcal{M}_0 = S^{N-1}$.
+
+Pick a point in $\mathcal{M}_0$, say $\phi=\left( 0,0,\cdots,0,v \right) $. We write
+\begin{align}
+    \phi^{a}\left( x \right) = \left( \pi^{1}\left( x \right) , \pi^{2}\left( x \right) , \cdots, v + \sigma \left( x \right)  \right) 
+.\end{align}
+
+Plugging this into the action, we find
+\begin{align}
+    S = \int \dd{^{4}x} \left( \frac{1}{2} \partial_\mu \pi^{i} \partial^{\mu} \pi^{i} + \partial_\mu \sigma \partial^{\mu} \sigma - V \left( \sigma, \pi \right)  \right) 
+,\end{align}
+and $V = \lambda v^2 \sigma^2 + \lambda v \sigma \left( \sigma^2 + \pi^{i} \pi^{i} \right) + \frac{1}{4} \lambda \left( \pi^{i} \pi^{i} + \sigma^2 \right)^2$ where $i = 0,\cdots, N-1$.
+
+Observe $\sigma$ has mass $M = \sqrt{2\lambda v^2} $ but $\pi^{i}$ are massless. These are $N-1$ Goldstone bosons.
+
+One can ask again what happens if we are at energies $E \ll M$? We can ignore $\sigma$ as before. We insist we remain on the vacuum manifold due to lack of energy to excite out of it, namely,
+\begin{align}
+    \left( \pi^{a}\left( x \right)  \right)^2 + \left( \phi^{N}\left( x \right)  \right)^2 = v^2
+.\end{align}
+
+We can then eliminate $\phi^{N}$ to get
+\begin{align}
+    S = \int \dd{^{4}x} \frac{1}{2} \left( \partial_\mu \pi^{i} \partial^{\mu} \pi^{i} + \frac{\left( \pi^{i} \partial_\mu \pi^{i} \right) \left( \pi^{j} \partial^{\mu} \pi^{j} \right)  }{v^2 - \pi^{k} \pi^{k}}\right) 
+,\end{align}
+where there is implicit sum over $i,j$ and $k$.
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    Take $N = 3$. We have $M_0 = S^2$. We can write
+    \begin{align}
+        \pi^{1} &= v \sin \theta \cos \phi \\
+        \pi^2 &= v \sin \theta \sin \phi \\
+        \varphi^{3} &= v \cos \theta 
+    .\end{align}
+
+    We get
+    \begin{align}
+        S = \int \dd{^{4}x} \frac{v^2}{2} \left( \partial_\mu \Theta \partial^{\mu} \Theta + \sin^2 \theta \partial_\mu \phi \partial^{\mu} \phi \right)
+    .\end{align}
+    In general, we have
+    \begin{align}
+        S = \int \dd{^{4}x} \frac{1}{2} g_{ab}\left( \pi \right) \partial_\mu \pi^{a} \partial^{\mu} \pi^{b}
+    .\end{align}
+\end{example}
+
+\subsection{Goldstone's Theorem (Classical}
+
+Consider a theory with scalar $\phi$ which transforms under a global symmetry $G$ as $\phi \mapsto g \phi$, $g \in G$. The vacuum manifold
+\begin{align}
+    \mathcal{M}_0 = \{\phi_0  \mid V\left( \phi_0 \right) = V_\text{min}\} 
+.\end{align}
+
+If $\phi_0 = 0$ then $G$ is unbroken. If $\mathcal{M}_0$ is not a single point, assume that if $\phi_0, \phi_0' \in \mathcal{M}$, then $\phi_0' = g \phi_0$ for some $g \in G$.
+
+The \emph{stability group} $H$ is $H = \{h \in G  \mid h \phi_0 = \phi_0\} $.
+
+\begin{note}
+    If $H'$ is the stability group for $\phi_0' = g \phi0$, then for each $h \in H$, we have $h' = g h g^{-1} \in H' \implies H \cong H'$.
+\end{note}
+
+We say $G$ is spontaneously broken to $H$ and write $G \to H$. We have
+\begin{align}
+    \mathcal{M}_0 = G / H
+.\end{align}
+
+Namely, $\mathcal{M}_0$ is the space of equivalence classes $g_1 \sim  g_2$ if $g_1 = h g_2 $ for some $h \in H$.
+
+\begin{example}
+    If $G = O\left( N \right) $, it is broken to  $H= O\left( N-1 \right) $. Thus $\mathcal{M}_0 = O\left( N \right) / O \left( N-1 \right) = S^{N-1}$ as we saw.
+\end{example}
+
+\begin{theorem}[ (Goldstone's theorem)]
+    If $G \to H$, then the number of massless Goldstone bosons is $\dim \left( G / H \right) = \dim G - \dim H$.
+\end{theorem}
+
+\begin{example}
+    $\dim \left( O\left( N \right)  \right) = \frac{1}{2} N \left( N -1 \right) $ and thus $\dim O\left( N \right) - \dim O\left( N-1 \right) = N - 1$.
+\end{example}
+ 
+
+
+

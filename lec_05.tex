@@ -1,0 +1,100 @@
+\lecture{5}{01/02/2025}{Broken Symmetries}
+
+\begin{definition}
+    A symmetry is said to be \emph{spontaneously broken} when the theory is invariant, but the ground state is not.
+\end{definition}
+
+Consider the classical system with action
+\begin{align}
+    S = \int \dd{t} \left( \frac{1}{2}\dot{\phi}^2 - V \left( \phi \right)  \right) 
+,\end{align}
+with $V \left( \phi \right) = \frac{1}{2}m^2 \phi^2 + \frac{1}{4}\lambda \phi^{4}$.
+
+This has a $\Z_2$ symmetry $\phi \to - \phi$. For $m^2 > 0$, $V\left( \phi \right) $ has a single minima at $\phi = 0$ that is preserved by the symmetry $\phi \to -\phi$.
+
+% fig
+
+If $m^2 < 0$, then we have two distinct minima at $\phi \equiv \pm v = \pm \sqrt{\frac{-m^2}{\lambda}} $. If one is in one ground state, then the action of the symmetry takes you to the other ground state. Thus, the symmetry is spontaneously broken.
+
+Generally, a $\Z_2$ or discrete symmetry implies that there are multiple degenerate ground states.
+
+One can write the potential as
+\begin{align}
+    V \left( \phi \right) = \frac{1}{4}\lambda \left( \phi^2 - v^2 \right)^2 + \text{const}.
+\end{align}
+and observe immediately that it has two ground states. Writing $\phi \left( t \right) = v + \sigma \left( t \right) $. Implies
+\begin{align}
+    V \left( \sigma \right) = \lambda \left( v^2 \sigma^2 + v \sigma^3 + \frac{1}{4}\sigma^{4} \right) 
+.\end{align}
+
+There is no hint of the discrete symmetry here (locally around $v$) due to the $\sigma^3$ term breaking the symmetry.
+
+In quantum mechanics, there is no spontaneous symmetry breaking. As all energy eigenstates are also eigenstates of the generator of $\Z_2$ symmetry,
+
+% figs
+
+One can prove that the ground state never crosses the axis and the $n$th excited state crosses the axis $n$ times.
+
+Take $\bra{\pm v}$ to be states sharply peaked in respective shells. Then in the Euclidean path integral
+\begin{align}
+    \bra{v} e^{-H\tau} \ket{-v} = \int \mathcal{D} \phi e^{-S_E \left[ \phi \right] }
+,\end{align}
+with $S_E \left[ \phi \right] = \int \dd{\tau} \left( \frac{1}{2} \left( \dv{\phi}{\tau} \right)^2 + V\left( \phi \right)  \right) $. In the saddle point approximation, this is dominated by the classical solution with
+\begin{align}
+    \dv[2]{\phi}{\tau} = \lambda \phi \left( \phi^2 - v^2 \right) 
+.\end{align}
+
+This is solved by
+\begin{align}
+    \phi_\text{classical}\left( \tau \right) = v \tanh \left( \sqrt{\frac{\lambda v^2}{2}}  \tau \right) 
+.\end{align}
+
+We can evaluate the action of this solution and see
+\begin{align}
+    S_\text{classical} &= \int_{-\infty}^{\infty} \dd{\tau} \left( \frac{1}{\epsilon} \left( \dv{t}{\tau} \right)^2 + \lambda \left( \phi_\text{classical}^2 - v^2 \right)^2  \right) 
+    &= \int_{-\infty}^{\infty} \dd{\tau} \frac{\lambda v^{4}}{2} \frac{1}{\cosh^{4} \left( \frac{\sqrt{\lambda v^2} }{2 \tau} \right) } = \frac{2}{3} \sqrt{2 \lambda}   \vb{v^3}
+.\end{align}
+
+We expect $\lim_{\tau \to \infty} \bra{v} e^{-H\tau} \ket{-v} = K e^{-S_\text{classical}} $ with $K \in \R$ constant. Thus $S_\text{classical} \ll 1$ gives us a very small tunelling rate as expected.
+
+Further, one can show $E_\text{excited} - E_\text{ground} \sim  \sqrt{\lambda v^2}  e^{-S_\text{classical}}$.
+
+Thus while there is no spontaneous symmetry breaking in quantum mechanics, it reappears in quantum field theory. Consider
+\begin{align}
+    S = \int \dd{^{4}x} \left( \frac{1}{2} \partial_\mu \phi \partial^{\mu} \phi - V \left( \phi \right)  \right) 
+,\end{align}
+with $V \left( \phi \right)  = \frac{1}{4} \lambda \left( \phi^2 - v^2 \right)^2$.
+
+Now there are two ground states, $\ket{\pm v}$. There is no longer tunnelling as the path integral with Euclidean action $S_E \left[ \phi \right] = \int \dd{\tau} \dd{^3x} \left( \frac{1}{2} \partial_\mu \phi \partial^{\mu} \phi + V\left( \phi \right)  \right) $, has the same classical solution,
+\begin{align}
+    \phi_\text{classical}\left( ,\tau, \vec{x} \right) = v \tanh \left( \sqrt{\frac{\lambda v}{2}}  \tau \right) 
+,\end{align}
+which crucially has no $\vec{x}$ dependence. Then
+\begin{align}
+    S_E &= \int \dd{\tau} \dd{^3x} \left( \frac{1}{2} \partial_\mu \phi_\text{c} \partial^{\mu} \phi_\text{c} \right) + V \left( \phi_\text{c} \right)  \\
+    &= \mathcal{V} S_\text{classical} 
+,\end{align}
+where $\mathcal{V}$ is the volume of space which diverges in $\R^3$. Therefore as the path integral goes $e^{-\mathcal{V}S_\text{classical}} = 0$, tunnelling is suppressed. Note in a compact space it reemerges.
+
+\begin{note}
+    Observe that $m^2 < 0$ tells us that there is an instability of the $\phi = 0$ vacuum. 
+
+    Also, we can repurpose $\phi_\text{classical}$ as a domain wall in a Lorentzian signature. Namely, one finds
+    \begin{align}
+        \phi \left( t, \vec{x} \right) = v \tanh \left( \sqrt{\frac{\lambda v}{2}}  z\right) 
+    ,\end{align}
+    which is a spatial domain wall at $z = 0$. This has finite energy density $\frac{2}{3}\sqrt{2\lambda} v^3$.
+
+    Last, a natural question is: why are $\ket{\pm v}$ physical and not a linear combination of them? The states $\ket{\pm v}$ alone satisfy cluster decomposition. Namely,
+    \begin{align}
+        \bra{\text{vac}} A\left( x \right) B\left( y \right) \ket{\text{vac}} =  \bra{\text{vac}} A \left( x \right) \ket{\text{vac}} \bra{\text{vac}} B\left( y \right) \ket{\text{vac}}
+    ,\end{align}
+    holds for $\ket{\pm v}$ but not linear combinations.
+\end{note}
+
+
+
+
+
+
+

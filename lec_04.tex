@@ -1,0 +1,72 @@
+\lecture{4}{30/01/2025}{CPT}
+
+\subsection{Time Reversal}
+
+Time reversal acts as $T : \left( t, \vec{x} \right) \mapsto \left( -t, \vec{x} \right) $.  In quantum mechanics, time reversal is an \emph{anti-unitary} operator satisfying for $\alpha \in \C$
+\begin{align}
+    T : \alpha \ket{\psi} \mapsto \alpha^{*} T \ket{\psi}
+.\end{align}
+
+This follows from the Schrödinger equation, $i \partial_t \Psi = - \grad^2 \Psi + V \Psi$. Comparing this to the heat equation, $\partial_t T = \grad^2 T$, ones sees that this is crucially not invariant under time reversal while the Schrödinger equation is under time reversal and complex conjugation, $\Psi \left( t \right) \mapsto \Psi^{*}\left( -t \right)$.
+
+For us, the take away is that time reversal complex conjugates complex numbers.
+
+\begin{example}
+    We look at $D_\mu = \partial_\mu -ie A_\mu$.
+    Under $T$ as $\partial_0 \to - \partial_0$ and $\partial_i \to  \partial_i$  but $i \mapsto -i$ so 
+    \begin{align}
+        T : A_0 \left( t, \vec{x} \right) &\mapsto A_0 \left( -t, \vec{x} \right) \\
+        T : A_i \left( t, \vec{x} \right) &\mapsto - A_i \left( -t, \vec{x} \right)
+    .\end{align}
+    These imply
+    \begin{align}
+        T : \vec{E}\left( t,\vec{x} \right) &\mapsto \vec{E} \left( -t, \vec{x} \right) \\
+        T : \vec{B}\left( t, \vec{x} \right) &\mapsto - \vec{B}\left( -t, \vec{x} \right)
+    .\end{align}
+\end{example}
+
+For a Dirac spinor, obeying the Dirac equation $i \gamma^{\mu} \left( \partial_\mu - i e A_\mu \right) \psi - M \psi = 0$, we take
+\begin{align}
+    T : \psi \left( t, \vec{x} \right) \Theta \psi \left( -t, x \right) 
+,\end{align}
+where $\Theta$ is some $4 \times 4$ matrix.
+
+Acting with $T$ on the Dirac equation we get
+\begin{align}
+    -i \left( - \left( \gamma^{0} \right)^{*} D_0 + \left( \gamma^{i} \right)^{*} D_i  \right) \Theta \phi - M \Theta \psi = 0 \\ 
+    \implies i \Theta^{-1} \left( \left( \gamma^{0} \right)^{*} D_0 - \left( \gamma^{i} \right)^{*} D_i \right) \Theta \psi - M \psi = 0
+.\end{align}
+
+This gives back the Dirac equation if
+\begin{align}
+    \Theta^{-1} \left( \gamma^{0} \right)^{*} \Theta = \gamma^{0} && \Theta^{-1} \left( \gamma^{i} \right)^{*} \Theta = - \gamma^{i}
+.\end{align}
+
+In the chiral basis, $\Theta = \gamma^{1} \gamma^{3}$ achieves this. Acting on Weyl spinors,
+\begin{align}
+    T : \psi_L \left( t, \vec{x} \right) \mapsto i \sigma^2 \psi_L \left( -t, \vec{x} \right) \\
+    T : \psi_R \left( t, \vec{x} \right) \mapsto -i \sigma^2 \psi_R \left( -t, \vec{x} \right) 
+.\end{align}
+
+\begin{note}
+    Time reversal does not flip handedness unlike parity and charge conjugation.
+\end{note}
+
+There are a number of observable consequences of a theory not respecting each of these symmetries.
+
+\subsection{CPT}
+
+Theories can break $C$, $P$ or $T$ and we will see that the standard model breaks all of these individually. However, any Lorentz invariant unitary quantum field theory must be invariant under the combination $CPT$.
+
+We can check that this holds for all fermion bilinears, $\overline{\psi}\psi$, $\overline{\psi}\gamma^{5}\psi$, $\overline{\psi}\gamma^{\mu} \psi$ and $\overline{\psi}\gamma^{\mu} \gamma^{5} \psi$.
+
+\begin{example}
+    For $CPT : \psi \left( x \right) \mapsto - \gamma^{5} \psi^{*}\left( -x \right) $ with $\gamma^{5} = \mqty( 1 & 0 \\ 0 & -1)$, then
+    \begin{align}
+        \overline{\psi}\psi &= \overline{\psi}\gamma^{0} \psi \mapsto \psi^{T} \gamma^{5} \gamma^{5} \gamma^{0} \gamma^{5} \psi^{*} \\
+        &= - \psi^{T} \gamma^{0} \psi^{*} \\
+        &= + \psi^{\dag} \gamma^{0} \psi = \overline{\psi}\psi
+    ,\end{align}
+    where to arrive at the last line we reordered the fermions.
+\end{example}
+

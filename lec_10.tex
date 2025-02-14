@@ -1,0 +1,85 @@
+\lecture{10}{13/02/2025}{Strong Force}
+
+One can show
+\begin{align}
+    b_0 = \frac{11}{3} N_C - \frac{2}{3} N_f
+,\end{align}
+using renormalization. See AQFT or Tong's gauge theory notes.
+
+$g_s$ is also written in terms of the $\beta\left( g \right)$ function, defined
+\begin{align}
+    \beta \left( g \right) = \mu \dv{g_S}{\mu}
+.\end{align}
+
+Here this gives
+\begin{align}
+    \beta \left( g_s \right) = -\frac{b_0}{\left( 4\pi \right)^2} g_s^3
+.\end{align}
+
+Crucially, the $\beta$ function is negative, provided that $b_0 > 0$. Namely, as long as $N_f < \frac{11}{2} N_C$.
+
+% plot w v and h asymptote
+
+Namely, as $\mu \to \infty$, $g_s \to 0$. This is known as \emph{asymptotic freedom}.
+
+Also in the infrared, the coupling $g_s \left( \mu \right) \to \infty$ as $\mu \to \Lambda_\text{QCD}$ defined by 
+\begin{align}
+    \Lambda_\text{QCD} = \mu \exp \left( \frac{-8 \pi^2}{b_0 g_S^2 \left( \mu \right) } \right) 
+.\end{align}
+
+\begin{note}
+    This scale is independent of $\mu$, $\dv{\Lambda_\text{QCD}}{\mu} = 0$, despite its appearance. We call it \emph{RG invariant}. Check this.
+\end{note}
+
+In particular, we can then evaluate this using any scale $\mu$. In particular, we use the UV cutoff, giving $\Lambda_{QCD} = \Lambda_{\text{UV}} e^{-\frac{8\pi^2}{\log g_0^2}}$ which is what one would get from solving the expression for $\frac{1}{g_S^2\left( \mu \right) }$.
+
+Every other coupling we come across decreases in strength as the energy scale decreases. This theory is thus strongly coupled and interesting things happen.
+
+\begin{note}
+    Classical Yang-Mills is a theory with dimensionless $g_S$, however the  quantum theory comes with a physical energy scale $\Lambda_\text{QCD}$.
+\end{note}
+
+If $E \gg Lambda_\text{QCD} \implies g_S^2 \ll 1$ and thus perturbation theory and the classical theory is a good guide for the underlying physics. However at $E \sim  \Lambda_\text{QCD}$, $g^2 \geq 1$ and thus new things happen.
+
+Recall that for QCD $N_C = 3$, however the quarks are massive which modifies $b_0$. For $\mu \gg m$, the quarks are essentially massless. However, for $\mu \ll m$, the quark decouples as it is too energetic of an excitation.
+
+Namely, at $\mu \gg 173$ GeV, the $\beta$ function is as if $N_f = 6$ massless quarks. For $4.2 \text{~GeV~} \ll \mu \ll 173 \text{~GeV~}$, the $\beta$ function is as if there are $N_f = 5 $ massless quarks.
+
+Experimentally $\Lambda_\text{QCD} \sim 200$ MeV. Alternatively, in terms of $g_S$, $\alpha_S \left( M_Z \right) = \frac{g_S^2\left( M_Z \right) }{4\pi} \sim  0.1$ where $M_Z \sim  90$ GeV.
+
+\subsection{The Mass Gap}
+
+Consider pure Yang-Mills theory with gauge group $G$ given by
+\begin{align}
+    S = \int \dd{^{4}x} \left( -\frac{1}{2} \Tr G_{\mu \nu} G^{\mu \nu} \right) 
+.\end{align}
+
+Classically, this is a theory of massless spin 1 particles which travel at the speed of light. Various pieces of evidence strongly suggest that quantum Yang Mills has no massless particles. Everyone believes it has a mass gap of order $m \sim  \Lambda_\text{QCD}$.
+
+Proving this is hard, as in, it will win you a Nobel Prize or Fields Medal. The massive particles are called \emph{glueballs}.
+
+To begin, we investigate the force between two fixed test particles a distance $r$ apart. For $r \ll \Lambda^{-1}_\text{QCD}$, corresponding to short distances, the theory is weakly coupled and thus we can use perturbation theory.
+
+For QED, we can reproduce the Coulomb force from a tree level Feynman diagram of $e^{-} + e^{-} \to e^{-} + e^{-}$ giving
+\begin{align}
+    V \left( r \right) = -\frac{e^2}{4\pi r}
+.\end{align}
+
+For QCD, we have a similar diagram $q_c + q_a \to \overline{q}_d + \overline{q}_b$ through a $s$-channel gluon where $a=1,\cdots,N$ is an index in the $SU \left( N \right) $ gauge group identically gives a potential
+\begin{align}
+    V \left( r \right) = \frac{g_S^2}{4\pi r} T^{A}_{ca} T^{* A}_{db}
+,\end{align}
+one can think of the generators here as an $N^2 \times  N^2$ matrix.
+
+To proceed further we need some group theory. We have that
+\begin{align}
+    \vb{N} \otimes \vb{\overline{N}} = \vb{1} \oplus \vb{adj}
+.\end{align}
+
+\begin{claim}
+    If we have two particles in representations $\vb{R}_1$ and $\vb{R}_2$, then for each irreducible representation $\vb{R} \subset \vb{R}_1 \otimes \vb{R}_2$, the force is proportional to
+    \begin{align}
+        C\left( \vb{R} \right) - C\left( \vb{R}_1 \right)  - C\left( \vb{R}_2 \right) 
+    ,\end{align}
+    where $C\left( R \right) $ is the quadratic Casimir, $C\left( R \right) = T^{A}\left( R \right) T^{A}\left( R \right) $
+\end{claim}

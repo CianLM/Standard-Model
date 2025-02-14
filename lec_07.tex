@@ -1,0 +1,83 @@
+\lecture{7}{6/02/2025}{Goldstone's theorem}
+
+Recall we stated Goldstone's theorem and that \emph{sponanteous symmetry breaking} means that the ground state is not invariant under the symmetry. Roughly, one can say $\phi \neq 0$ in such theories. 
+
+Recall the notation $G \to H$, read \emph{$G$ is broken to $H$}, meaning that $H$ is the remaining unbroken symmetry. Goldstone's theorem tells us that the number of massless scalars (Goldstone bosons) is $\dim G / H = \dim G - \dim H$. Roughly, every broken generator becomes a Goldstone boson.
+
+We proceed with a proof of this theorem.
+
+\begin{proof}
+    Take $\phi^{a}$ to sit in a representation $R$ of $G$ with generators $\tensor{\left( T^{A} \right)}{^{a}_b}$ where $A = 1 ,\cdots, \dim G$ and $a,b = 1, \cdots, \dim R$. Under an infinitesimal transformation
+    \begin{align}
+        \phi \to g \phi = \phi + \delta \phi
+    ,\end{align}
+    with $\delta \phi = i \alpha^{A} \tensor{\left( T^{A} \right)}{^{a}_b} \phi^{b}$ where $\alpha^{A}$ is infinitesimal.
+
+    We know
+    \begin{align}
+        V \left( g \phi \right) = V \left( \phi \right) \implies V \left( \phi + \delta \phi \right) - V \left( \phi \right) = i\alpha^{A} \pdv{V}{\phi^{a}} \tensor{\left( T^{a} \right)}{^{a}_b} \phi^{b} = 0
+    .\end{align}
+    Then we see that differentiating with respect to $\phi^{b}$, 
+    \begin{align}
+        \pdv{V}{\phi^{a}} \tensor{\left( T^{A} \right)}{^{a}_b} + \pdv[2]{V}{\phi^{a}}{\phi^{b}} \tensor{\left( T^{A} \right)}{^{a}_c} \phi^{c} = 0
+    .\end{align}
+    Evaluating this on $\phi_0$, some minima of the potential $\pdv{V}{\phi^{a}}\bigg|_{\phi_0} = 0$, we have
+    \begin{align}
+        \pdv[2]{V}{\phi^{a}}{\phi^{b}} \tensor{\left( T^{A} \right)}{^{a}_b} \phi^{b}
+    .\end{align}
+    This is the mass matrix of the theory. This equation is telling us that this matrix has some zero eigenvalues.
+
+    We have a massless particle for each $A = 1, \cdots, \dim G$ such that $T^{A} \phi_0 \neq 0$. The $\widetilde{T}^{A}$ that have $\widetilde{T}^{A} \phi_0 = 0$ are generators of $H$. The orthogonal generators $R^{\alpha}$ such that $\Tr \left( \widetilde{T}^{A} R^{\alpha} \right) = 0$ give Goldstone bosons with $\alpha = 1, \cdots, \left( \dim G - \dim H \right) $.
+\end{proof}
+
+\subsection{Spontaneous Symmetry Breaking in the Quantum Theory}
+
+There are very few natural ways to get genuinely massless (or even light) scalar fields in quantum field theory. This occurs as their mass is renormalized due to self interactions which leads to
+\begin{align}
+    m_\text{phys}^2 = m^2 + \Lambda_\text{UV}^2
+,\end{align}
+namely, the mass gets pushed up to the highest energy scale, naively the UV cutoff of the theory. Supersymmetry is one way to get massless/light scalar fields but this has yet to be observed in nature. If we observe massless/light scalars, there should be a reason. The most prominent is Goldstone's theorem.
+
+We now prove Goldstone's theorem in a quantum field theory.
+
+\begin{proof}
+    There is a current $J^{A}_\mu$ for each generator of $G$ with the conserved charge
+    \begin{align}
+        Q^{A} = \int \dd{^3 x} J_0^{A}
+    .\end{align}
+
+    Under $G$, any operator $\mathcal{O}$ transforms as $\delta \mathcal{O} = i \left[ Q^{A}, \mathcal{O} \right] $. For our scalars,
+    \begin{align}
+        \left[ Q^{A}, \phi \right] = \tensor{\left( T^{A} \right)}{^{a}_b} \phi^{b}
+    .\end{align}
+
+    We look at the vacuum expectation value $\left<\phi \right> = \bra{\Omega} \phi \ket{\Omega}$, where $\ket{\Omega}$ is the interacting vacuum.
+
+    Then $\bra{\Omega} \left[ Q^{A}, \phi^{a} \right] \ket{\Omega} = \tensor{\left( T^{A} \right)}{^{a}_b} \left<\phi^{b} \right> $.
+
+    Spontaneous symmetry breaking then implies that $\left<\phi^{b} \right> \neq 0 \iff Q^{A} \ket{\Omega}$. This means that the vacuum is not unique.
+
+    In the language of statistical field theory, $\phi$ is an \emph{order parameter}  for spontaneous symmetry breaking. For each broken generator, we can construct states $\ket{\pi^{a}\left( p \right) } \sim  int \dd{^3 x} e^{i p \cdot x} J_0^{A}\left( x \right) \ket{\Omega}$ of momentum $p$.
+
+    In the limit,
+    \begin{align}
+        \lim_{p \to 0} \ket{\pi^{a}\left( p \right) } = Q^{A} \ket{\Omega}
+    .\end{align}
+    Thus $\left[ Q^{A}, H \right] = 0$ implies $Q^{A} \ket{\Omega}$ has the same energy as $\ket{\Omega}$. Namely, $\ket{\pi^{a}\left( p \right) }$ is massless.
+\end{proof}
+
+Briefly we discuss a corollary.
+
+\begin{theorem}[ (Coleman-Mermin-Wagner Theorem)]
+    The spontaneous symmetry breaking of a continuous symmetry cannot occur in $d = 0+1$ (QM) or $d = 1 + 1$ field theories. They do occur in $d \geq 3$.
+\end{theorem}
+
+This is because the wave function spreads out over the vacuum moduli space $\mathcal{M}_0$ in low dimensions, but not in higher dimensions. This is related to
+\begin{align}
+    \left< \phi \left( x \right) \phi \left( y \right)  \right> = \begin{cases}
+        \left| x - y \right|, & d = 1, \\
+        \log \left| x - y \right|, & d = 2, \\
+        \left| x - y \right|^{2-d} , & d \geq 3. 
+    \end{cases}
+\end{align}
+

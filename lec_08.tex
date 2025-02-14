@@ -1,0 +1,65 @@
+\lecture{8}{08/02/2025}{Higgs Mechanism}
+
+We have seen spontaneously broken symmetries. Today we will see spontaneously broken gauge symmetries. The natural question is: what happens when a gauge symmetry is spontaneously broken?
+
+Consider the simplest case, the Abelian-Higgs model,
+\begin{align}
+    S = \int \dd{^{4}x} \left( -\frac{1}{4}F_{\mu \nu} F^{\mu \nu} + D_\mu \phi^{\dag} D^{\mu} \phi - \frac{\lambda}{2} \left( \left| \phi \right|^2 - v^2 \right)^2 \right) 
+,\end{align}
+where $D_\mu = \partial_\mu \phi - i e A_\mu \phi$.
+
+Now the $U\left( 1 \right) $ symmetry is gauged $\phi \to e^{ie \alpha \left( x \right) } \phi$ and $A_\mu \mapsto A_\mu + \partial_\mu \alpha$.
+
+We take $\phi \left( x \right) = e^{i \Theta\left( x \right) } \left( v + \sigma \left( x \right)  \right)$ and then
+\begin{align}
+    D_\mu \phi = e^{i \Theta} \left( \partial_\mu \sigma + i \left( v + \sigma \right) \left( \partial_\mu \Theta - e A_\mu \right)  \right) 
+,\end{align}
+and thus
+\begin{align}
+    S = \int \dd{^{4}x} \left( -\frac{1}{4} F_{\mu \nu} F^{\mu \nu} + \partial_\mu \sigma \partial^{\mu} \sigma - V \left( \sigma \right)  + \left( v + \sigma \right)^2 \left( \partial_\mu \Theta - e A_\mu \right) \left( \partial^{\mu} \Theta - e A^{\mu} \right)  \right) 
+,\end{align}
+where $V \left( \sigma \right) = \frac{\lambda}{2}\sigma^2 \left( \sigma + 2 v \right)^2$.
+
+\begin{note}
+    $\sigma$ is a massive scalar with $m_\sigma^2 = 2 \lambda v^2$. The analogous field in the standard model is the famous Higgs boson. $\Theta$ appears only as $\partial_\mu \Theta - e A_\mu$ and it can be eliminated by a gauge transformation with $\alpha \left( x \right) = - \frac{1}{e}\Theta \left( x \right) $. This is called \emph{unitary gauge}.
+\end{note}
+
+This leads to
+\begin{align}
+    S = \int \dd{^{4}x} \left( -\frac{1}{4} F_{\mu \nu} F^{\mu \nu} + \partial_\mu \sigma \partial^{\mu} \sigma - V\left( \sigma \right)  + e^2 \left( v + \sigma \right)^2 A_\mu A^{\mu} \right) 
+.\end{align}
+
+This contains a quadratic term $v^2 A_\mu A^{\mu}$ which is a mass term for the vector field. Thus, we have a mass for the photon given by
+\begin{align}
+    m_\gamma^2 = 2 e^2v^2
+.\end{align}
+
+This is the \emph{Higgs mechanism}. The would be Goldstone boson $\Theta \left( x \right) $ is `\emph{eaten}' by the gauge field $A_\mu$ to give a massive spin 1 particle.
+
+One can think of the gauge degeneracy as giving us a degenerate set of ground states that are all physically equivalent. The massless fluctuation as one moves between these ground states is no longer there as we have gauged it away.
+
+Recall also that a massless spin one particle has two degrees of freedom, whereas a massive spin one particle has three. The extra degree of freedom here is from the $\Theta$ in the scalar sector.
+
+This same phenomenon happens in a superconductor, where $\phi$ described a bound state of two electrons (Cooper pair) with charge $-2e$. One property of a superconductor is that it expels any magnetic field. This is the \emph{Meissner effect}.
+
+The current coupled to the gauge symmetry is
+\begin{align}
+    J_\mu = -2e i\left( \phi^{\dag} D \phi - \phi D \phi^{\dag}   \right) 
+.\end{align}
+
+If we set $\phi = v e^{i \Theta \left( x \right) }$, we see $J_\mu = 4ev^2 \left( \partial_\mu \Theta - 2e A_\mu \right) $ where $2e$ is the Cooper pair charge. Thus
+\begin{align}
+    J_i = 4 ev^2 \left( \grad \Theta - 2e A_i \right) \implies \left( \grad \times J \right)_i  = -2 \left( 2e \right)^2 v^2 B_i
+.\end{align}
+
+This is the London equation (one of them). Comparing this to Amperes law, $\left( \grad \times  B \right)_i  = J_i$, as $\nabla \times  \left( \nabla \times B_i \right) = - grad^2 B_i$ (using $\nabla \cdot B = 0$) we get
+\begin{align}
+    \nabla^2 B_i = \frac{1}{\lambda^2} B_i
+,\end{align}
+with $\lambda^2 = \frac{1}{2 \left( 2 ev \right)^2}$ called the penetration depth.
+
+This equation is solved by $B_i - \left( B\left( z \right) ,0,0 \right) $ where $B\left( z \right) = B_0 e^{-\frac{z}{\lambda}}$. Namely, the magnetic field in the superconductor decays exponentially. This is the Meissner effect.
+
+We propose a thought experiment: take two magnetic monopoles with magnetic charge $g = \pm 1$. In the vacuum, $B_i = \frac{g}{4\pi r^2} \hat{r}_i$ however together their potential becomes $V\left( r \right) \sim \frac{g^2}{r}$. Putting them inside a superconductor, we would see a \emph{magnetic flux tube} form. The magnetic flux tube takes constant energy per unit length, which means that the potential grows $V\left( r \right) \sim  r$ with distance. Magnetic monopoles are then \emph{confined} in a superconductor.
+
+This analogy and process extends to quarks in QCD.

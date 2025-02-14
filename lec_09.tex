@@ -1,0 +1,90 @@
+\lecture{9}{11/02/2025}{Non-Abelian Higgs Mechanism}
+
+If we have a non-abelian gauge theory with gauge symmetry $G$, then it can be \emph{Higgs}ed to $G \to H$ with $\dim G - \dim H$ would-be Goldstone bosons eaten by the massive gauge bosons and $H$ massless gauge bosons remain.
+
+We consider a $G = SO \left( 3 \right) $  gauge theory coupled to a scalar field $\phi^{a}$ for $a = 1,2,3$ which transforms in the fundamental representation of $SO \left( 3 \right) $. Equivalently, if one thought of this as an $SU \left( 2 \right) $ gauge theory, $\phi^{a}$ would transform in the adjoint representation of $SU\left( 2 \right) $ as these representations are equivalent.
+
+We have covariant derivative
+\begin{align}
+    D_\mu \phi^{a} = \partial_\mu \phi^{a} + g \epsilon^{abc} A^{b}_\mu \phi^{c}
+,\end{align}
+where $f^{abc} = \epsilon^{abc}$ are the structure constants for $SO \left( 3 \right) $ in the fundamental representation which has generators $\left( T^{a} \right)^{bc} = -i \epsilon^{abc}$.
+
+Then, we take action
+\begin{align}
+    S = \int \dd{^{4}x} \left( -\frac{1}{4}F_{\mu \nu}^{a} F^{a \mu \nu} + \frac{1}{2} D_\mu \phi^{a} D^{\mu} \phi^{a} - \frac{\lambda}{2} \left( \phi^{a} \phi^{a} - v^2 \right)^2 \right) 
+,\end{align}
+where the field strength is
+\begin{align}
+    F^{a}_{\mu \nu} = \partial_\mu A_\nu^{a} - \partial_\nu A_\mu^{a} + g\epsilon^{abc} A_\mu^{b} A_\nu^{c}
+.\end{align}
+
+This potential is chosen such that $\phi^{a} \phi^{a} = v^2$ in the ground state which is importantly $\phi^{a} \neq 0$. This ground state is the equation for a sphere. Suppose $\phi = \left( 0,0,v \right) $. This choice breaks $G = SO \left( 3 \right) \to H = U\left( 1 \right) \cong SO \left( 2 \right)  $ as one can still rotate about the axis of $\phi$. Thus we expect a massless photon from this unbroken symmetry.
+
+We write
+\begin{align}
+    \widetilde{\phi} = e^{\left( i \xi^{1}\left( x \right) T^{1} + i \xi^{2}\left( x \right) T^2 \right) } \mqty( 0 \\ 0 \\ v + \sigma \left( x \right) )
+,\end{align}
+where $\xi^{i}\left( x \right) $ are the would-be Goldstone bosons that travel from $\phi$ to any other generate ground state on the sphere.
+
+Recall that a gauge transformation acts on $\phi$ as $\phi \to e^{i\alpha^{a}\left( x \right) T^{a}} \phi$. This can be used to remove $\xi^{1}$ and $\xi^{2}$ from the action. We're left with 
+\begin{align}
+    S = \int \dd{^{4}x} \left( -\frac{1}{4} F_{\mu \nu}^{a} F^{a \mu \nu} + \frac{1}{2} \partial_\mu \sigma \partial^{\mu} \sigma - V\left( \sigma \right) + g^2 \left( v + \sigma \right)^2 \left( A^{1}_\mu A^{1\mu} + A^2_\mu A^{2\mu} \right)  \right) 
+,\end{align}
+where $V\left( \sigma \right) = \frac{\lambda}{2}\sigma^2 \left( \sigma + 2 v \right)^2$. Thus both $A^{1}_\mu$ and $A^2_\mu$ have mass $m^2_\gamma = g^2 v^2$ while $A_\mu^3$ is massless.
+
+% Chapter 3
+
+\subsection{The Strong Force}
+
+The theory of QED is given by
+\begin{align}
+    S = \int \dd{^{4}x} \left( -\frac{1}{4} F_{\mu \nu} F^{\mu \nu} + i \overline{\psi} \fbs{D} \psi - m \overline{\psi}\psi \right)
+.\end{align}
+
+The strong force, QCD, is built on a gauge group $SU \left( 3 \right) $ and has action given by
+\begin{align}
+    S = \int \dd{^{4}x} \left( -\frac{1}{2} \Tr G_{\mu \nu} G^{\mu \nu} + i \sum_{i=1}^{6} \overline{q}_i \fbs{D} q_i - m_i \overline{q}_i q_i \right)
+.\end{align}
+
+The $SU\left( 3 \right) $ gauge field $G_\mu$ is called the \emph{gluon} and the field strength is
+\begin{align}
+    G_{\mu \nu} = \partial_\mu G_\nu - \partial_\nu G_\mu - ig_S \left[ G_\mu, G_\nu \right] 
+,\end{align}
+where $g_S$ is the strong coupling constant.
+
+We have $G_\mu = G_\mu^{A} T^{A}$ is a $3 \times 3$ matrix written in terms of the 8 generators of $SU \left( 3 \right) $, $T^{A}$ for $A = 1, \cdots, 8$. We write $T^{A} = \frac{1}{} \lambda^{A}$ where $\lambda^{a}$ are the \emph{Gell-Mann} matrices given by
+\begin{align}
+    \lambda^{1} = \mqty( 0 & 1 & \\ 1 & 0 \\ & & 0 ) && \lambda^2 = \mqty( 0 & -i \\ i & 0 & \\ & & 0 ) \lambda^3 = \mqty( 1 & & \\ & -1 & \\ & & 0 ) \cdots \lambda^{8} = \frac{1}{\sqrt{3} }\mqty( 1 & & \\ & 1 & \\ & & -2 )
+.\end{align}
+
+Two of these are diagonal, $\lambda^3$ and $\lambda^{8}$. This is the statement that the Cartan subalgebra of $SU\left( 3 \right) $ has dimension 2.
+
+Each $q_{i}$ in the action above is a Dirac fermion describing a quark in $\vb{3}$, the fundamental representation of $G = SU\left( 3 \right) $.
+
+The full indices are
+\begin{align}
+    q^{a}_{\alpha i}
+,\end{align}
+where $a=1,2,3$ is a color index, $\alpha = 1,2,3,4$ is a spinor index and $i=1,\cdots N_f$ is a flavour index where $N_f$ is the number of species of quarks.
+
+Then writing the covariant derivative of these fermions we see
+\begin{align}
+    D_\mu q^{a} = \partial_\mu q^{a} = \partial_\mu q^{a} - i g_s \tensor{\left( G_\mu \right)}{^{a}_b} q^{b}
+.\end{align}
+
+The flavour index runs over $i = 1, \cdots, N_f$ and for full $QCD$, we have $N_f = 6$ different quarks. We don't know why there are six. They have masses between $m_\text{down} \sim  5$ MeV and $m_\text{top} \sim  173 $ GeV.
+
+We will ignore electromagnetism for now, but when we include it, the quarks have electric charges $Q_{d,s,b} = -\frac{1}{3}e$ and $Q_{u,c,t} = \frac{2}{3}e$. These charges are well understood as we will see.
+
+\subsection{Strong Coupling}
+
+Massless gauge bosons give us a force that drop off as $\frac{1}{r^2}$, but this isn't true for QCD. The answer is in renormalization. The coupling $g_S$ depends on the energy scale $\mu$ at which one does an experiment.
+
+First consider $G = SU \left( N_C \right)$ coupled to $N_f$ massless quarks in the fundamental representation.
+
+Then, at one-loop,
+\begin{align}
+    \frac{1}{g_S^2 \left( \mu \right) } = \frac{1}{g_0^2} - \frac{b_0}{\left( 4\pi \right)^2} \log \left( \frac{\Lambda_{\text{UV}}^2}{\mu^2}\right) 
+,\end{align}
+where $\Lambda_\text{UV}$ is the UV cut-off. $g_0 \equiv g_S \left( \Lambda_\text{UV} \right)$ is the \emph{bare coupling} with $b_0 = \frac{11}{3} N_C - \frac{2}{3} N_f$ for QCD.
